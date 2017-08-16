@@ -8,11 +8,16 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  TouchableHighlight,
   Text,
   View
 } from 'react-native';
 
 export default class stopwatch extends Component {
+  getInitalState() {
+    timeElapsed: null
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -39,12 +44,22 @@ export default class stopwatch extends Component {
 
   startStopButton () {
     return (
-        <View>
+        <TouchableHighlight
+          underlayColor="gray"
+          onPress={this.handleStartPress}
+        >
             <Text>
                 Start
             </Text>
-        </View>
+        </TouchableHighlight>
     );
+  }
+
+  handleStartPress () {
+    const startTime = new Date();
+    this.setState({
+      timeElapsed: new Date() - startTime
+    });
   }
 
   lapButton () {
@@ -77,10 +92,15 @@ const styles = StyleSheet.create({
       flex: 1
     },
     timerWrapper: {
-      flex: 5
+      flex: 5,
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     buttonWrapper: {
-      flex: 3
+      flex: 3,
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center'
     }
 });
 
