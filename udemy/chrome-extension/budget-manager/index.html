@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello World</title>
+    <title>Budget Manager</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="./jquery-3.2.1.min.js"></script>
     <script src="./script.js"></script>
 </head>
 <body>
-    <h2 id="greet">Hello World!</h2>
-    <input type="text" id="name">
+    <h1 id="greet">Budget Manager</h1>
+    <h2>Total Spent: <span id="total">0</span></h2>
+    <h2>Limit: <span id="limit"></span></h2>
+    <h3>Enter Amount</h3>
+    <input type="text" id="amount" />
+    <input type="button" id="spendAmount" value="Spend" />
 </body>
 </html>
