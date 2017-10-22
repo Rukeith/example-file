@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Page Font Style",
+    "version": "1.0.0",
+    "description": "Change font style on specific pages",
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "128": "icon128.png",
+            "48": "icon48.png",
+            "16": "icon16.png"
+        },
+        "default_title": "Page Font Style",
+        "default_popup": "index.html"
+    },
+    "background": {
+        "scripts": [ "event.js" ],
+        "persistent": false     // false is event page, true is background
+    },
+    "content_scripts": [
+        {
+            "matches": [ "https://developer.chrome.com/*" ],
+            "js": [ "content.js", "jquery-3.2.1.min.js" ],
+            "css": [ "content.css" ]
+        }
+    ],
+    "author": "Rukeith",
+    "permissions": [
+        "tabs",
+        "https://developer.chrome.com/*"
+    ]
+}
