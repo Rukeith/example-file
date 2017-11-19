@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  each article, i in articles
+    .result
+      a(href=article.url)
+        h4= article.title
+      p.author= article.author
+      p.url= article.url
+      p.description= article.description

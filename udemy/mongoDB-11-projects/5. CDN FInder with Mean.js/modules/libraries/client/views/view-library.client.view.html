@@ -1,0 +1,33 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.library.name"></h1> <small>Version: {{vm.library.version}}</small>
+    <hr>
+    <div ng-bind="vm.library.description"></div>
+    <br>
+    <span ng-if="vm.library.type == 'JavaScript'" class="label label-success">{{vm.library.type}}</span>
+    <span ng-if="vm.library.type == 'CSS'" class="label label-danger">{{vm.library.type}}</span>
+    <br><br>
+    <code>{{vm.library.url}}</code>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.library.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="libraries.edit({ libraryId: vm.library._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.library.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.library.user"
+            ng-bind="vm.library.user.displayName"></span>
+      <span ng-if="!vm.library.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.library.content"></p>
+</section>

@@ -1,0 +1,18 @@
+<body>
+  {{renderPage}}
+</body>
+
+<template name="layout">
+  {{> navbar}}
+  <div class="container">
+    {{> yield}}
+
+    <footer>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Copyright &copy; Photoz</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>

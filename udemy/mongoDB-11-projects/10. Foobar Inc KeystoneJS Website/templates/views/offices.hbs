@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Office Locations</h2>
+  <div class="row">
+    {{# each offices}}
+      <div class="well">
+        <h4><a href="{{officeUrl slug}}">{{{title}}}</a></h4>
+        <ul>
+          <li>{{{address}}}</li>
+          <li>{{{city}}}</li>
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+</div>

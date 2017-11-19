@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Add Article
+  form(method='post', action='/articles/add')
+   label Title:
+   input.form-control(name='title', type='text')
+   label URL:
+   input.form-control(name='url', type='text')
+   label Author:
+   input.form-control(name='author', type='text')
+   label Description
+   textarea.form-control(name='description')
+   input.button(name='submit',type='submit',value='Save')
+   a(class='button alert' href='/') Back

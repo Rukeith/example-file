@@ -1,0 +1,30 @@
+<section>
+  <div class="page-header">
+    <h1>Libraries</h1>
+  </div>
+  <div class="list-group">
+    <form class="form-inline well">
+      <div class="form-group">
+        Search:
+        <input type="text" class="form-control" ng-model="searchText" placeholder="Filter Libraries...">
+      </div>
+    </form>
+    <table class="table table-striped">
+      <tr ng-repeat="library in vm.libraries | filter:searchText">
+        <td>
+          <a ui-sref="libraries.view({libraryId:library._id})">
+            {{library.name}}
+          </a>
+          <span ng-if="library.type=='JavaScript'" class="label label-success">{{library.type}}</span>
+          <span ng-if="library.type=='CSS'" class="label label-danger">{{library.type}}</span>
+        </td>
+        <td>
+          {{library.url}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.libraries.$resolved && !vm.libraries.length">
+    No Libraries yet, why don't you <a ui-sref="libraries.create">create one</a>?
+  </div>
+</section>

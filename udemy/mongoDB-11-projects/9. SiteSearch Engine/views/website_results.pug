@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  each website, i in websites
+    .result
+      a(href=website.url)
+        h4= website.title
+      p.url= website.url
+      p.description= website.description

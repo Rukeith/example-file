@@ -1,0 +1,16 @@
+{
+  "name": "mongochat",
+  "version": "1.0.0",
+  "description": "Simple chat app that uses Mongo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npm start": "node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.22",
+    "socket.io": "^1.7.2"
+  }
+}

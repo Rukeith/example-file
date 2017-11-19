@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower_components/foundation/css/foundation.css')
+  body
+    .row
+      h1.text-center SiteSearch
+      .panel
+        form(method="post", action="/")
+          .row
+            .text-center
+              input(type="radio", name="searchType", value="website" checked='')
+              | Website
+              input(type="radio", name="searchType", value="article")
+              | Article
+            .large-10.columns
+              input(type="text", placeholder="Search...", name="searchText")
+            .large-2.columns
+              input.button.tiny(type="submit", value="GO")
+    .row
+      block content
+
+      br
+      hr
+      br
+      footer
+        a(href="/websites/add") Add Website |
+        a(href="/articles/add") Add Article

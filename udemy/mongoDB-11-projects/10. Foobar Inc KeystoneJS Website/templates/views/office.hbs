@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+
+    <h2>{{data.office.title}}</h2>
+    <div class="col-md-4 col-lg-4">
+      {{#if data.office.image}}<img class="thumbnail" src="{{{cloudinaryUrl data.office.image width=300}}}">{{/if}}
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <ul class="list-group">
+        <li class="list-group-item">{{data.office.address}} {{data.office.city}}, {{data.office.state}}</li>
+        <li class="list-group-item">{{data.office.employees}}</li>
+      </ul>
+      <p>{{{data.office.info}}}</p>
+    </div>
+  </div>
+</div>
