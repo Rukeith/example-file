@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Three.js Example</title>
+</head>
+<body>
+  <!-- Method one render with canvas -->
+  <canvas id=”mainCanvas-one” width=”600px” height=”450px” ></canvas>
+  <script>
+    const renderer = new THREE.WebGLRenderer({
+      canvas: document.getElementById('mainCanvas-one')
+    });
+    renderer.setClearColor("#000"); // Setting render's background color is black
+  </script>
+
+  <!-- Method two render with normal element -->
+  <div id="mainCanvas-two" style="width: 600px; height: 450px;"></div>
+
+  <script>
+    const canvasContainer = document.getElementById("mainCanvas-two");
+    const { clientWidth: width, clientHeight: height } = canvasContainer;
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true  //抗锯齿开
+    });
+    renderer.setSize(width, height);     // setting render's width and height
+    renderer.setClearColor("0×000000");  // setting render's background color is black
+    const canvas = renderer.domElement;  // get render's canvas element
+    canvasContainer.appendChild(canvas); // write canvas to html element
+  </script>
+</body>
+</html>
