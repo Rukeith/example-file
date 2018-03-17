@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     getData(msg) {
-      console.log(`Get data from children = ${msg}`);
+      this.title = msg;
     }
   }
 }
