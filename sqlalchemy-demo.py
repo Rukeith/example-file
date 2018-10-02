@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask.ext.sqlalchemy import SQLAlchemy
 
-database = 'mysql://root:pass@shopee24-mysql:3306/shopee24_dev'
+database = 'mysql://root:root@localhost:3306/db'
 
 app = Flask(__name__)
 
